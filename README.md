@@ -1,10 +1,10 @@
-Cell 1 — Install dependencies
+# Cell 1 — Install dependencies
 (Install the ART library and ensure TF/Keras are present)
 !pip install -q adversarial-robustness-toolbox tensorflow matplotlib
 
 
 
-Cell 2 — Imports & helper functions
+# Cell 2 — Imports & helper functions
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
@@ -12,7 +12,7 @@ from tensorflow import keras
 from art.attacks.evasion import FastGradientMethod
 from art.estimators.classification import KerasClassifier
 
-# simple helper to show image + prediction
+(simple helper to show image + prediction)
 def show_image(img, title=''):
     plt.figure(figsize=(3,3))
     plt.imshow(img.squeeze(), cmap='gray')
@@ -22,8 +22,8 @@ def show_image(img, title=''):
     plt.show()
 
 
-    Cell 3 — Load MNIST (small, fast) and preprocess
-# Load MNIST from Keras datasets (handwritten digits)
+# Cell 3 — Load MNIST (small, fast) and preprocess
+(Load MNIST from Keras datasets (handwritten digits))
 (x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data()
 
 # Normalize to [0,1] and add channel dim
