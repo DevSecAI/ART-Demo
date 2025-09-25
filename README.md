@@ -1,5 +1,5 @@
 # Cell 1 — Install dependencies
-(Install the ART library and ensure TF/Keras are present)
+NOTE: Install the ART library and ensure TF/Keras are present)
 
 !pip install -q adversarial-robustness-toolbox tensorflow matplotlib
 
@@ -90,8 +90,9 @@ adv_pred = np.argmax(classifier.predict(adv), axis=1)[0]
 print("Adversarial predicted label:", adv_pred)
 show_image(adv, title=f"Adversarial (pred={adv_pred})")
 
-Cell 9 — Compare several examples and attack strengths
-# Show a grid of original vs adversarial for multiple eps values
+# Cell 9 — Compare several examples and attack strengths
+--Show a grid of original vs adversarial for multiple eps values--
+
 indices = [1, 5, 12]  # sample indices; change as you like
 eps_values = [0.02, 0.08, 0.15, 0.25]
 
@@ -107,7 +108,7 @@ for idx in indices:
         show_image(adv, title=f"eps={eps:.2f} pred={adv_pred}")
 
 
-        Cell 10 — Measure accuracy drop on a test subset
+# Cell 10 — Measure accuracy drop on a test subset
 # Evaluate baseline accuracy
 baseline_preds = np.argmax(classifier.predict(x_test[:1000]), axis=1)
 baseline_acc = (baseline_preds == y_test[:1000]).mean()
